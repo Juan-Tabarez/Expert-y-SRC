@@ -3,51 +3,33 @@ using System.Text;
 
 namespace Library
 {
+    
     public class AppointmentService
     {
-        public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
+        public static string CreateAppointment(String name, String id, String phoneNumber, int age, DateTime appointmentDate, string appointmentPlace, String doctorName, String doctorSpecialty)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
 
-            if (string.IsNullOrEmpty(name))
-            {
-                stringBuilder.Append("Unable to schedule appointment, Name is required\n");
-                isValid = false;
-            }
+            (string, Patient) patientAdd = Patient.AddPatient(name, id, phoneNumber,age);
+            stringBuilder.Append(patientAdd.Item1);
 
-            if (string.IsNullOrEmpty(id))
-            {
-                stringBuilder.Append("Unable to schedule appointment, id is required\n");
-                isValid = false;
-            }
+            (string, Doctor) doctorAdd = Doctor.AddDoctor(doctorName, doctorSpecialty);
+            stringBuilder.Append(doctorAdd.Item1);
 
-            if (string.IsNullOrEmpty(phoneNumber))
+            if (patientAdd.Item2 == null || doctorAdd.Item2 == null)
             {
-                stringBuilder.Append("Unable to schedule appointment, Phone number is required\n");
                 isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(appoinmentPlace))
-            {
-                stringBuilder.Append("Unable to schedule appointment, Appoinment place is required\n");
-                isValid = false;
-            }
-
-            
-            if (string.IsNullOrEmpty(doctorName))
-            {
-                stringBuilder.Append("Unable to schedule appointment, Doctor name is required\n");
-                isValid = false;
+                stringBuilder.Append("Appointment could not be created, check patient, doctor and appointment data...\n");
             }
 
             if (isValid)
             {
-                stringBuilder.Append("Appoinment Scheduled");
+                Appointment appointment = new Appointment(appointmentPlace, appointmentDate);
+                stringBuilder.Append("Appointment completed successfully...\n");
             }
 
             return stringBuilder.ToString();
         }
-
     }
 }

@@ -13,7 +13,7 @@ namespace SRP
             Libreria Biblioteca = new Libreria(ubicacion);
             Biblioteca.AlmacenarLibro(libro1,"A","7");
             Biblioteca.AlmacenarLibro(libro2,"B","4");
-            Console.WriteLine(Biblioteca.ubicacionesDeLibros[libro1]);
+            Console.WriteLine("La ubicacion del libro en la biblioteca es: "+Biblioteca.ubicacionesDeLibros[libro1]);
         }
     }
 }

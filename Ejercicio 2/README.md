@@ -18,6 +18,9 @@ Para el ejercicio se pide
 #### ✍ Parte 1 
 **Criticar el código dado en base a patrónes y principios**
 
+Existe una única clase llamada "AppointmentService", que posee un método que crea consultas, utiliza datos pertenecientes a los pacientes y a los doctores. El problema de esto, es que una sola clase esta asumiendo varias responsabilidades a la vez por lo que sería una buena práctica crear nuevas clases, que cumplan con el patrón SRP. Ademas decidimos que era mejor idea validar los datos que se le pasaban a "AppointmentService" dentro 
+de las clases expertas que conocen dichos datos. El codigo base era muy dificil de extender.
+
 #### 🧐 Parte 2 
 **Realizar las CRC correspondientes.**
 

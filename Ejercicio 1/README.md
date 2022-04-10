@@ -18,6 +18,7 @@ Permite comentar
 más de una línea de código
 */
 ```
+La clase Libro no cumple con el SRP, ya que además de tener la responsabilidad de crear un objeto libro, también tiene la responsabilidad de almacenarlos, cosa que debería ser el trabajo de otra clase distinta, por ejemplo "librería".
 
 ## Parte 2
 Realiza todas las modificaciones que creas necesarias para que el código cumpla con el principio SRP.
