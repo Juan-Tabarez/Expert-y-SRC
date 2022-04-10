@@ -24,3 +24,5 @@ Para el ejercicio se pide
 #### 👩‍💻 Parte 3
 **Aplique patrónes/principios según su crítica.**
 
+
+//Existe una única clase llamada "Appointment service", que posee un constructor de consulta, que utiliza datos pertenecientes a los pacientes y a los doctores, el problema de esto, es que no existen otras clases expertas, con la responsabilidad de conocer estos datos. Por lo que sería una buena práctica crear dichas clases, que cumplan con el patrón SRP.
