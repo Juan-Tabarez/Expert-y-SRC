@@ -1,5 +1,6 @@
 ﻿using System;
 using Library;
+using System.Text;
 
 namespace Program
 {
@@ -7,6 +8,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
+
             string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", 84, DateTime.Now, "Wall Street", "Armand", "Dentist");
             Console.WriteLine(appointmentResult);
 

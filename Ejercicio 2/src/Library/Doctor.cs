@@ -6,6 +6,7 @@ namespace Library
     public class Doctor
     {
         public readonly string DoctorName;
+
         public readonly string Specialty;
 
         public Doctor(string doctorName,string specialty)
@@ -26,6 +27,7 @@ namespace Library
             }
             response.Append("Doctor could not be added...\n");
             return (response.ToString(),null);
+
         }
     }
 }
