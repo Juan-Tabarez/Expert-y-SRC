@@ -8,18 +8,15 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
 
-            Patient jose = new Patient("Jose", "986782342", "5555-555-555", "22");
-            
-            Doctor house = new Doctor("House", "Gastroenterólogo");
-
-            Appointment appointment = new Appointment("Queen Street", DateTime.Now);
-
-            string appointmentResult = AppointmentService.CreateAppointment(jose, appointment , house);
-
+            string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", 84, DateTime.Now, "Wall Street", "Armand", "Dentist");
             Console.WriteLine(appointmentResult);
 
+            string appointmentResult2 = AppointmentService.CreateAppointment("Ralf Manson", "094562131", "5555-555-555", -5, DateTime.Now, "Queen Street", "", "General");
+            Console.WriteLine(appointmentResult2);
+
+            string appointmentResult3 = AppointmentService.CreateAppointment("Jhon Doe", "54231597", "8888-445-654", 45, new DateTime(21, 5, 15), "Wall Street", "House", "General");
+            Console.WriteLine(appointmentResult3);
         }
     }
 }

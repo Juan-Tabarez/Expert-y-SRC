@@ -1,5 +1,8 @@
 using System;
 
+using System.Text;
+
+
 namespace Library
 {
     public class Patient
@@ -7,21 +10,30 @@ namespace Library
         public readonly string Name;
 
         public readonly string Id;
-
         public readonly string PhoneNumber;
+        public readonly int Age;
 
-        public readonly string Age;
-        public readonly bool isValidPatient;
-
-        public Patient(string name, string id, string phoneNumber, string age)
+        public Patient(string name, string id, string phoneNumber, int age)
         {   
-            if (!string.IsNullOrEmpty(name) || (!string.IsNullOrEmpty(id) || (!string.IsNullOrEmpty(phoneNumber) || (!string.IsNullOrEmpty(age)))))
+            this.Name = name;
+            this.Id = id;
+            this.PhoneNumber = phoneNumber;
+            this.Age = age;     
+        }
+
+        public static (string, Patient) AddPatient(string name, string id, string phoneNumber, int age)
+        {
+            StringBuilder response = new StringBuilder("Adding Patient...\n");
+
+            if (!string.IsNullOrEmpty(name) && (!string.IsNullOrEmpty(id) && (!string.IsNullOrEmpty(phoneNumber) && (age >= 0))))
             {
-                this.Name = name;
-                this.Id = id;
-                this.PhoneNumber = phoneNumber;
-                this.Age = age;
+                Patient patient = new Patient(name, id, phoneNumber, age);
+                response.Append("Patient added successfully...\n");
+                return (response.ToString(),patient);
             }
+            response.Append("Patient could not be added...\n");
+            return (response.ToString(),null);
+
         }
     }
 }

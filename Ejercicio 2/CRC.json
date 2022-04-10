@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Patient",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Conocer los datos de los pacientes."
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Doctor",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Conocer los datos de los doctores."
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Appointment Service",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Crear la consulta"
+      ],
+      "collaborators": [
+        "Doctor",
+        "Paciente",
+        "Appointment"
+      ]
+    },
+    {
+      "name": "Appointment",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Conocer fecha y lugar de la consulta, y el número de orden que tiene"
+      ],
+      "collaborators": [
+        ""
+      ]
+    }
+  ]
+  

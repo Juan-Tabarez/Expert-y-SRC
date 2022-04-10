@@ -5,7 +5,7 @@ namespace SRP
 {
     public class Libreria
     {
-        public Dictionary<Libro, string> ubicacionesDeLibros { get ; set; }
+        public Dictionary<Libro, string> ubicacionesDeLibros { get;}
     
         public Libreria(Dictionary<Libro, string> ubicaciones)
         {
