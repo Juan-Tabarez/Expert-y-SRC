@@ -10,8 +10,8 @@ namespace Library
         public static string CreateAppointment(String name, String id, String phoneNumber, int age, DateTime appointmentDate, string appointmentPlace, String doctorName, String doctorSpecialty)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
+            
             Boolean isValid = true;
-
 
             (string, Patient) patientAdd = Patient.AddPatient(name, id, phoneNumber,age);
             stringBuilder.Append(patientAdd.Item1);
