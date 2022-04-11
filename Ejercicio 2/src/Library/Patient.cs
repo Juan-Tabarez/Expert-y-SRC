@@ -10,7 +10,9 @@ namespace Library
         public readonly string Name;
 
         public readonly string Id;
+        
         public readonly string PhoneNumber;
+        
         public readonly int Age;
 
         public Patient(string name, string id, string phoneNumber, int age)
@@ -33,7 +35,6 @@ namespace Library
             }
             response.Append("Patient could not be added...\n");
             return (response.ToString(),null);
-
         }
     }
 }
